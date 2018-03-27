@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            function init() {
+                setTimeout(function(){window.scrollTo(0,1)},0);
+            }
+    
+            window.history.pushState("/redirector", "Redirector", "/redirector");
+            window.history.pushState("/landing", "Landing", "/landing");
+            window.addEventListener("popstate", function(e) {
+                if(document.URL.indexOf("/redirector") >= 0){
+                    document.location.href = '/landing';
+                }
+            });
+        </script>
+    </head>
+    <body>Landing page!!!</body>
+</html>
